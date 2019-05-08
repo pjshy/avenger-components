@@ -1,0 +1,114 @@
+animationBase($duration)
+  animation-duration $duration
+  animation-fill-mode both
+
+  animation-play-state paused
+  animation-timing-function ease-in-out
+
+effect($name, $placements = (), $duration = .25s)
+  :global({$name})
+    &-enter,
+    &-appear
+      animationBase($duration)
+
+    &-exit
+      animationBase($duration)
+
+    &-enter-active,
+    &-appear-active,
+    &-exit-active
+      animation-play-state running
+
+    &-exit-done
+      display none
+
+    if length($placements) > 0
+      for $placement in $placements
+        &-enter-active[x-placement^=\"{$placement}\"],
+        &-appear-active[x-placement^=\"{$placement}\"]
+          animation-name $placement + 'In'
+
+        &-exit-active[x-placement^=\"{$placement}\"]
+          animation-name $placement + 'Out'
+
+@keyframes :global(bottomIn)
+  0%
+    opacity: 0
+    transform-origin: 0 0
+    transform: translate(0, -20px)
+
+  100%
+    opacity: 1
+    transform-origin: 0 0
+    transform: translate(0, 0)
+
+@keyframes :global(bottomOut)
+  0%
+    opacity: 1
+    transform-origin: 0 0
+    transform: translate(0, 0)
+
+  100%
+    opacity: 0
+    transform-origin: 0 0
+    transform: translate(0, -20px)
+
+@keyframes :global(topIn)
+  0%
+    opacity: 0
+    transform-origin: 100% 100%
+    transform: translate(0, 20px)
+  100%
+    opacity: 1
+    transform-origin: 100% 100%
+    transform: translate(0, 0)
+
+@keyframes :global(topOut)
+  0%
+    opacity: 1
+    transform-origin: 100% 100%
+    transform: translate(0, 0px)
+  100%
+    opacity: 0
+    transform-origin: 100% 100%
+    transform: translate(0, 20px)
+
+@keyframes :global(rightIn)
+  0%
+    opacity: 0
+    transform-origin: 0 0
+    transform: translate(20px, 0)
+  100%
+    opacity: 1
+    transform-origin: 0 0
+    transform: translate(0, 0)
+
+@keyframes :global(rightOut)
+  0%
+    opacity: 1
+    transform-origin: 0 0
+    transform: translate(0, 0)
+  100%
+    opacity: 0
+    transform-origin: 0 0
+    transform: translate(20px, 0)
+
+@keyframes :global(leftIn)
+  0%
+    opacity: 0
+    transform-origin: 100% 100%
+    transform: translate(-20px, 0)
+  100%
+    opacity: 1
+    transform-origin: 100% 100%
+    transform: translate(0, 0)
+
+@keyframes :global(leftOut)
+  0%
+    opacity: 1
+    transform-origin: 100% 100%
+    transform: translate(0, 0)
+  100%
+    opacity: 0
+    transform-origin: 100% 100%
+    transform: translate(-20px, 0)

@@ -1,0 +1,97 @@
+@require './style/index.styl'
+
+// for animaion
+$transition = '.slide'
+effect($transition, ('top' 'bottom' 'left' 'right'))
+
+$black = #000
+$size = 8px
+$container-margin = 4px
+$arrow-border-color = alpha($black, .05)
+$arrow-after-border-color = #fff
+$dropdown-shadow = 0 2px 20px alpha($black, .1)
+
+:local(.dropdown)
+  padding 0
+  text-align left
+
+  :local(.dropdown-container)
+    position relative
+    box-shadow $dropdown-shadow
+    border-radius 4px
+    overflow visible
+    background-color #fff
+    border 0 solid transparent
+
+  :local(.dropdown-arrow)
+  :local(.dropdown-arrow):after
+    content ' '
+    position absolute
+    display block
+    width 0
+    height 0
+    border-width $size
+    border-style solid
+    border-color transparent
+
+  &[x-placement^="top"]
+    :local(.dropdown-container)
+      margin-bottom $container-margin
+      &:local(.dropdown-with-arrow)
+        margin-bottom $container-margin + $size
+
+    :local(.dropdown-arrow)
+      border-top-color $arrow-border-color
+      bottom -($size * 2) - 1px
+
+      &:after
+        border-top-color $arrow-after-border-color
+        bottom -($size) + 1px
+        left -($size)
+
+  &[x-placement^="bottom"]
+    :local(.dropdown-container)
+      margin-top $container-margin
+      &:local(.dropdown-with-arrow)
+        margin-top $container-margin + $size
+
+    :local(.dropdown-arrow)
+      border-bottom-color $arrow-border-color
+      top -($size * 2) - 1px
+
+      &:after
+        border-bottom-color $arrow-after-border-color
+        top -($size) + 1px
+        left -($size)
+
+  &[x-placement^="left"]
+    :local(.dropdown-container)
+      margin-right $container-margin
+      &:local(.dropdown-with-arrow)
+        margin-right $container-margin + $size
+
+    :local(.dropdown-arrow)
+      border-left-color $arrow-border-color
+      right -($size * 2) - 1px
+
+      &:after
+        border-left-color $arrow-after-border-color
+        right -($size) + 1px
+        top -($size)
+
+  &[x-placement^="right"]
+    :local(.dropdown-container)
+      margin-left $container-margin
+      &:local(.dropdown-with-arrow)
+        margin-left $container-margin + $size
+
+    :local(.dropdown-arrow)
+      border-right-color $arrow-border-color
+      left -($size * 2) - 1px
+
+      &:after
+        border-right-color $arrow-after-border-color
+        left -($size) + 1px
+        top -($size)
+
+  

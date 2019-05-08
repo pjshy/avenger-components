@@ -1,0 +1,70 @@
+{
+  "name": "avenger-components",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --env.dev",
+    "build": "rm -rf dist/ && webpack",
+    "typecheck": "tsc --noEmit",
+    "typecheck:w": "npm run typecheck -- --watch",
+    "lint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\" -t stylish",
+    "lint:fix": "npm run lint -- --fix",
+    "release": "standard-version",
+    "playground": "start-storybook -p 3000 -c tools/storybook"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@storybook/react": "^5.0.11",
+    "@types/popper.js": "^1.11.0",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-transition-group": "^2.9.1",
+    "@types/storybook__react": "^4.0.1",
+    "assets-webpack-plugin": "3.9.10",
+    "autoprefixer": "9.5.0",
+    "babel-loader": "8.0.5",
+    "component-playground": "^3.2.1",
+    "css-loader": "2.1.1",
+    "file-loader": "3.0.1",
+    "lodash": "4.17.11",
+    "mini-css-extract-plugin": "0.5.0",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "postcss": "7.0.14",
+    "postcss-loader": "3.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-transition-group": "^4.0.0",
+    "style-loader": "0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "3.0.2",
+    "tslint": "5.14.0",
+    "tslint-eslint-rules": "5.4.0",
+    "tslint-loader": "3.5.4",
+    "tslint-react": "3.6.0",
+    "typescript": "3.4.4",
+    "uglifyjs-webpack-plugin": "2.1.2",
+    "url-loader": "^1.0.1",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.2.1"
+  },
+  "dependencies": {
+    "popper.js": "^1.15.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-transition-group": ">=4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "author": "pjshy"
+}
