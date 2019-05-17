@@ -1,5 +1,5 @@
 module.exports = function (context) {
-  var plugins = [
+  const plugins = [
     require('autoprefixer')({
       'browsers': [
         '> 1%',
