@@ -5,3 +5,8 @@ declare module '*.styl' {
 
   export default styleObject
 }
+
+declare module '*.md' {
+  const markdownRow: string
+  export default markdownRow
+}

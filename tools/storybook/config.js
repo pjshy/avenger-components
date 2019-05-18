@@ -1,7 +1,14 @@
 import { configure } from '@storybook/react'
+import { setConsoleOptions } from '@storybook/addon-console'
+
+setConsoleOptions({
+  panelExclude: []
+})
+
+const req = require.context('../../playground', true, /\.stories\.tsx$/)
 
 function loadStories () {
-  require('../../playground/index')
+  req.keys().forEach(req)
 }
 
 configure(loadStories, module)
