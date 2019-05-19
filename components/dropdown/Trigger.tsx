@@ -2,8 +2,9 @@ import * as React from 'react'
 import { findDOMNode } from 'react-dom'
 import { Placement } from 'popper.js'
 
+import { Portal } from 'components/abstract'
+
 import Popup from './Popup'
-import Portal from './Portal'
 import Mask from './Mask'
 import { contains, addEventListener } from './utils'
 
@@ -183,6 +184,11 @@ export default class Trigger extends React.PureComponent<TriggerProps, TriggerSt
   private getTrigger () {
     const { children } = this.props
     const trigger = React.Children.only(children)
+
+    if (!React.isValidElement(trigger)) {
+      throw new Error('The <Dropdown />\'s children must be a react element')
+    }
+
     const props: React.HTMLAttributes<HTMLElement> = {}
 
     if (this.isClickToShow || this.isClickToHidden) {
@@ -340,7 +346,7 @@ export default class Trigger extends React.PureComponent<TriggerProps, TriggerSt
 
     this.hasPopupMouseDown = true
     this.clearMouseDownTimer()
-    this.mousedownTimer = setTimeout(() => this.hasPopupMouseDown = false, 0)
+    this.mousedownTimer = window.setTimeout(() => this.hasPopupMouseDown = false, 0)
 
     if (context.onPopupMouseDown) {
       context.onPopupMouseDown(e)
@@ -351,7 +357,7 @@ export default class Trigger extends React.PureComponent<TriggerProps, TriggerSt
     handler: EventHandler,
     event: React.MouseEvent<HTMLElement> | React.FocusEvent<HTMLElement>,
   ) => {
-    const children = this.props.children
+    const children = this.props.children as React.ReactElement
     if (children) {
       const fn = React.Children.only(children).props[handler]
       fn && fn(event)
@@ -389,7 +395,7 @@ export default class Trigger extends React.PureComponent<TriggerProps, TriggerSt
     this.clearDelayTimer()
 
     if (delayMS) {
-      this.delayTimer = setTimeout(() => this.setPopupVisible(visible), delayMS)
+      this.delayTimer = window.setTimeout(() => this.setPopupVisible(visible), delayMS)
     } else {
       this.setPopupVisible(visible)
     }

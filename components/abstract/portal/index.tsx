@@ -3,13 +3,20 @@ import { createPortal } from 'react-dom'
 
 interface Props {
   getContainer: () => HTMLElement
+  onPortalDestroy?: (node: HTMLElement) => void
 }
 
-export default class Portal extends React.PureComponent<Props> {
+export class Portal extends React.PureComponent<Props> {
   private container: HTMLElement | null = null
 
   componentDidMount () {
     this.createContainer()
+  }
+
+  componentWillUnmount () {
+    if (this.container && typeof this.props.onPortalDestroy === 'function') {
+      this.props.onPortalDestroy(this.container)
+    }
   }
 
   render () {
