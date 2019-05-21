@@ -6,6 +6,8 @@
 
 # Avenger Comonent
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pjshy/avenger-components.svg)](https://greenkeeper.io/)
+
 A react component library
 
 ## Dev
