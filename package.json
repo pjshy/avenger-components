@@ -1,6 +1,7 @@
 {
   "name": "avenger-components",
   "version": "0.0.1",
+  "description": "Design for Tina",
   "scripts": {
     "dev": "webpack-dev-server --progress --env.dev",
     "build": "rm -rf dist/ && webpack",
@@ -26,7 +27,6 @@
     "@storybook/addon-storysource": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/react": "^5.0.11",
-    "@types/popper.js": "^1.11.0",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "@types/react-transition-group": "^2.9.1",
@@ -74,7 +74,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:pjshy/avenger-components.git"
   },
   "license": "MIT",
   "author": "pjshy"
