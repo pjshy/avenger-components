@@ -4,6 +4,9 @@ node_modules
 # build
 dist
 
+# dev
+public
+
 # test
 coverage
 __mocks__

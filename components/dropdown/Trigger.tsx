@@ -70,6 +70,10 @@ function noop () {
   // noop
 }
 
+/**
+ * @todo Refactor Trigger Component
+ * @body This component is so big and complex. we need a good way to compose with single component
+ */
 export default class Trigger extends React.PureComponent<TriggerProps, TriggerState> {
   static defaultProps: Partial<TriggerProps> = {
     action: ['hover'],
