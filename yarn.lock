@@ -1908,13 +1908,6 @@
   resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.0.0.tgz#d11813b9c0ff8aaca29f04cbc12817f4c7d656e5"
   integrity sha1-0RgTucD/iqyinwTLwSgX9MfWVuU=
 
-"@types/popper.js@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.npm.taobao.org/@types/popper.js/download/@types/popper.js-1.11.0.tgz#217a9231953ded26b15a6264f9942e963a8f6e69"
-  integrity sha1-IXqSMZU97SaxWmJk+ZQuljqPbmk=
-  dependencies:
-    popper.js "*"
-
 "@types/prop-types@*":
   version "15.7.1"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.1.tgz#f1a11e7babb0c3cad68100be381d1e064c68f1f6"
@@ -7677,7 +7670,7 @@ polished@^2.3.3:
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-popper.js@*, popper.js@^1.14.4, popper.js@^1.15.0:
+popper.js@^1.14.4, popper.js@^1.15.0:
   version "1.15.0"
   resolved "https://registry.npm.taobao.org/popper.js/download/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha1-VWC5m7rXZH6fqkdca4BWYh9aT/I=
