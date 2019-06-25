@@ -39,7 +39,7 @@
     "babel-loader": "8.0.6",
     "component-playground": "^3.2.1",
     "css-loader": "3.0.0",
-    "eslint": "^6.0.0",
+    "eslint": "^6.0.1",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-react": "^7.14.0",
     "eslint-plugin-react-hooks": "^1.6.0",
