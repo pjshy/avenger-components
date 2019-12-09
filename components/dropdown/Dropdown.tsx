@@ -146,7 +146,7 @@ export default class Dropdown extends React.PureComponent<DropdownProps, States>
   }
 
   private isDumb = () => {
-    return this.props.hasOwnProperty('opened')
+    return Object.prototype.hasOwnProperty.call(this.props, 'opened')
   }
 
   private findParent = (target: HTMLElement) => {

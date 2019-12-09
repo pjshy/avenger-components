@@ -294,7 +294,7 @@ export default class Trigger extends React.PureComponent<TriggerProps, TriggerSt
   }
 
   private isDumb = () => {
-    return this.props.hasOwnProperty('popupVisible')
+    return Object.prototype.hasOwnProperty.call(this.props, 'popupVisible')
   }
 
   private onDocumentClick = (e: MouseEvent) => {
