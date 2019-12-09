@@ -12,9 +12,9 @@ export function contains (root: Element, target: Element) {
   return false
 }
 
-export function addEventListener<K extends keyof HTMLElementEventMap> (
+export function addEventListener<K extends keyof WindowEventMap> (
   type: K,
-  listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any,
+  listener: (this: Window, ev: WindowEventMap[K]) => any,
   options?: boolean | AddEventListenerOptions,
 ) {
   window.addEventListener(type, listener, options)
