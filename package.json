@@ -47,7 +47,7 @@
     "lodash": "4.17.13",
     "mini-css-extract-plugin": "0.7.0",
     "optimize-css-assets-webpack-plugin": "5.0.2",
-    "postcss": "7.0.17",
+    "postcss": "7.0.31",
     "postcss-loader": "3.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
