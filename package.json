@@ -33,7 +33,7 @@
     "@types/storybook__addon-info": "^4.1.1",
     "@types/storybook__react": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
+    "@typescript-eslint/parser": "^3.1.0",
     "assets-webpack-plugin": "3.9.10",
     "autoprefixer": "9.6.0",
     "babel-loader": "8.0.6",
